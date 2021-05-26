@@ -38,4 +38,13 @@ describe Network do
 
     expect(@gsmn.highest_paid_doctor).to eq(@miranda)
   end
+
+  it 'outputs doctors by hospital' do
+    @gsmn.add_hospital(@seattle_grace)
+    @gsmn.add_hospital(@grey_sloan)
+
+    expect(@gsmn.doctors_by_hospital).to eq({
+      @seattle_grace => ["Meredith Grey", "Alex Karev"], @grey_sloan => ["Miranda Bailey", "Derek Sheperd"]
+      })
+  end
 end
