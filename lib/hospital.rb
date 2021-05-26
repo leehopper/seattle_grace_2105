@@ -6,4 +6,10 @@ class Hospital
     @chief_of_surgery = chief
     @doctors = doctors
   end
+
+  def total_salary
+    salary = 0
+    @doctors.each { |doctor| salary += doctor.salary }
+    salary
+  end
 end
