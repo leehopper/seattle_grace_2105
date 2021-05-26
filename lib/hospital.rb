@@ -8,13 +8,16 @@ class Hospital
   end
 
   def total_salary
-    salaries = 0
-    @doctors.each { |doctor| salaries += doctor.salary }
-    salaries
+    total = @doctors.map { |doctor| doctor.salary }
+    total.sum
   end
 
   def lowest_paid_doctor
     lowest = @doctors.min_by { |doctor| doctor.salary }
     lowest.name
+  end
+
+  def specialties
+    @doctors.map { |doctor| doctor.specialty }
   end
 end
