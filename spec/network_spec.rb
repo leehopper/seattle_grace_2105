@@ -24,6 +24,9 @@ describe Network do
   end
 
   it 'adds hospitals' do
+    @gsmn.add_hospital(@seattle_grace)
+    @gsmn.add_hospital(@grey_sloan)
+
     expect(@gsmn.hospitals).to eq([@seattle_grace, @grey_sloan])
   end
 end
