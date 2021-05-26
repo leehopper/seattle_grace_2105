@@ -18,4 +18,8 @@ describe Hospital do
     expect(@seattle_grace.chief_of_surgery).to eq("Richard Webber")
     expect(@seattle_grace.doctors).to eq([@meredith, @alex])
   end
+
+  it 'outputs the total salary' do
+    expect(@seattle_grace.total_salary).to eq(190000)
+  end
 end
