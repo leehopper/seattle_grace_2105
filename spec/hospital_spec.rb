@@ -26,4 +26,8 @@ describe Hospital do
   it 'outputs lowest paid doctor' do
     expect(@seattle_grace.lowest_paid_doctor).to eq("Alex Karev")
   end
+
+  it 'outputs hospital speciality' do
+    expect(@seattle_grace.specialties).to eq(["General Surgery", "Pediatric Surgery"])
+  end
 end
