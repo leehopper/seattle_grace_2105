@@ -54,4 +54,11 @@ describe Network do
 
     expect(@gsmn.doctors_by_specialty).to eq({ "General Surgery" => ["Meredith Grey", "Miranda Bailey"], "Pediatric Surgery" => ["Alex Karev"], "Neurosurgery" => ["Derek Sheperd"] })
   end
+
+  it 'outputs average doctor salary' do
+    @gsmn.add_hospital(@seattle_grace)
+    @gsmn.add_hospital(@grey_sloan)
+
+    expect(@gsmn.average_doctors_salary).to eq(116250.00)
+  end
 end
