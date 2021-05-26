@@ -6,4 +6,8 @@ class Network
     @name = name
     @hospitals = []
   end
+
+  def add_hospital(hospital)
+    @hospitals << hospital
+  end
 end
