@@ -24,4 +24,15 @@ class Network
     end
     doctors
   end
+
+  def doctors_by_specialty
+    doctors = @hospitals.flat_map { |hospital| hospital.doctors }
+
+    specialties = doctors.group_by { |doctor| doctor.specialty}
+
+    output = specialties.each do |specialty, doctor|
+      specialties[specialty] = doctor.map { |doctor| doctor.name }
+    end
+    output
+  end
 end
