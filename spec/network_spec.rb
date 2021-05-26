@@ -47,4 +47,11 @@ describe Network do
       @seattle_grace => ["Meredith Grey", "Alex Karev"], @grey_sloan => ["Miranda Bailey", "Derek Sheperd"]
       })
   end
+
+  it 'outputs doctors by specialty' do
+    @gsmn.add_hospital(@seattle_grace)
+    @gsmn.add_hospital(@grey_sloan)
+
+    expect(@gsmn.doctors_by_specialty).to eq({ "General Surgery" => ["Meredith Grey", "Miranda Bailey"], "Pediatric Surgery" => ["Alex Karev"], "Neurosurgery" => ["Derek Sheperd"] })
+  end
 end
