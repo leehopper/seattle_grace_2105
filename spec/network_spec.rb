@@ -11,4 +11,9 @@ describe Network do
   it 'exists' do
     expect(@gsmn).to be_a(Network)
   end
+
+  it 'attributes' do
+    expect(@gsmn.name).to eq("Greater Seattle Medical Network")
+    expect(@gsmn.hospitals).to eq([])
+  end
 end
